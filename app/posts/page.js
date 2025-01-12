@@ -15,6 +15,12 @@ export default function Posts() {
         fetchRecords()
     }, [])
 
+    const handleDelete = async (id) => {
+        await axios.delete(`http://localhost:5000/posts/${id}`)
+        const filterData = posts.filter(post => post.id !== id)
+        setPosts(filterData)
+    }
+
     return (
         <div className="px-48 py-20">
             <div className="flex justify-between">
@@ -40,7 +46,7 @@ export default function Posts() {
                                 <td className="space-x-4 px-6 py-3">
                                     <Link href={`/posts/${post.id}?mode=read`}><button className="text-blue-700">Read</button></Link>
                                     <Link href={`/posts/${post.id}?mode=edit`}><button className="text-blue-700">Edit</button></Link>
-                                    <button className="text-blue-700">Delete</button>
+                                    <button className="text-blue-700" onClick={() => handleDelete(post.id)}>Delete</button>
                                 </td>
                             </tr>
                         ))

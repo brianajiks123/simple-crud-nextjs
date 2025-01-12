@@ -38,6 +38,11 @@ export default function Post({ params }) {
         fetchPost()
     }
 
+    const handleDelete = async () => {
+        await axios.delete(`http://localhost:5000/posts/${id}`)
+        router.push("/")
+    }
+
     return (
         <div className="py-20">
             <h1 className="text-3xl text-center">{editing ? "Edit Post" : "Read Post"}</h1>
@@ -59,7 +64,7 @@ export default function Post({ params }) {
                     <div className="flex space-x-4 mt-5">
                         <button onClick={() => router.push("/")} className="w-full bg-green-200 px-3 py-1.5">Home</button>
                         <button onClick={() => setEditing(!editing)} className="w-full bg-blue-200 px-3 py-1.5">Edit</button>
-                        <button className="w-full bg-red-200 px-3 py-1.5">Delete</button>
+                        <button className="w-full bg-red-200 px-3 py-1.5" onClick={handleDelete}>Delete</button>
                     </div>
                 </div>
             )}
