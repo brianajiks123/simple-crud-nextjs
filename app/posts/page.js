@@ -38,8 +38,8 @@ export default function Posts() {
                                 <td className="px-6 py-3 text-gray-900">{post.title}</td>
                                 <td className="px-6 py-3 text-gray-900">{post.content}</td>
                                 <td className="space-x-4 px-6 py-3">
-                                    <button className="text-blue-700">Read</button>
-                                    <button className="text-blue-700">Edit</button>
+                                    <Link href={`/posts/${post.id}?mode=read`}><button className="text-blue-700">Read</button></Link>
+                                    <Link href={`/posts/${post.id}?mode=edit`}><button className="text-blue-700">Edit</button></Link>
                                     <button className="text-blue-700">Delete</button>
                                 </td>
                             </tr>

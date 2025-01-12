@@ -1,9 +1,9 @@
 {
   "posts": [
     {
-      "id": "1",
       "title": "First Post",
-      "content": "This is first post"
+      "content": "This is first post.",
+      "id": "1"
     },
     {
       "id": "2",
@@ -11,9 +11,9 @@
       "content": "This is second post"
     },
     {
-      "id": "6481",
-      "title": "f",
-      "content": "f"
+      "title": "For Me",
+      "content": "This is for me.",
+      "id": "6481"
     },
     {
       "id": "5f20",
